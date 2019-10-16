@@ -75,7 +75,7 @@ public class HomeController {
         return "showperson";
     }
     @RequestMapping("/updateperson/{id}")
-    public String updatePerson(@PathVariable("person_id") long id,Model model){
+    public String updatePerson(@PathVariable("id") long id,Model model){
         model.addAttribute("person", personRepository.findById(id).get());
         return "personform";
     }
