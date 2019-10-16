@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<h1>Persons</h1>
+<table >
+    <tr>
+
+        <th>Person ID</th>
+        <th>Person Name</th>
+        <th> Pet Numbers</th>
+        <th> Description</th>
+
+
+
+    </tr>
+    <tr th:each="person : ${persons}">
+        <td th:text="${person.id}">
+        <td th:text="${person.name}">
+        <td th:text="${person.numberOfPetsOwned}">
+        <td th:text="${person.description}">
+
+        </td>
+
+        <td>
+
+            <a th:href="@{/updatedepartment/{id}(id=${person.person_id})}">Update</a>
+            <a th:href="@{/detaildepartment/{id}(id=${person.person_id})}">Details</a>
+            <a th:href="@{/deletedepartment/{id}(id=${person.person_id})}">Delete</a>
+        </td></tr>
+</table>
+
+<h1>Pets</h1>
+
+<table>
+
+    <tr>
+        <th>Pet ID</th>
+        <th>Pet Name</th>
+        <th>Pet Type</th>
+        <th>Pet Age</th>
+    </tr>
+
+    <tr th:each="pet : ${pets}">
+        <td th:text="${pet.pet_id}"></td>
+        <td th:text="${pet.name}"></td>
+        <td th:text="${pet.type}"></td>
+        <td th:text="${pet.age}"></td>
+        <td>
+
+            <a th:href="@{/updateemployee/{id}(id=${pet.pet_id})}">Update</a>
+            <a th:href="@{/detailemployee/{id}(id=${pet.pet_id})}">Details</a>
+            <a th:href="@{/deleteemployee/{id}(id=${pet.pet_id})}">Delete</a>
+
+        </td>
+    </tr>
+
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
