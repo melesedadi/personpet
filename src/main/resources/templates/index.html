@@ -52,9 +52,9 @@
 
         <td>
 
-            <a th:href="@{/updatedepartment/{id}(id=${person.person_id})}">Update</a>
-            <a th:href="@{/detaildepartment/{id}(id=${person.person_id})}">Details</a>
-            <a th:href="@{/deletedepartment/{id}(id=${person.person_id})}">Delete</a>
+            <a th:href="@{/updatedepartment/{id}(id=${person.id})}">Update</a>
+            <a th:href="@{/detaildepartment/{id}(id=${person.id})}">Details</a>
+            <a th:href="@{/deletedepartment/{id}(id=${person.id})}">Delete</a>
         </td></tr>
 </table>
 
@@ -70,15 +70,15 @@
     </tr>
 
     <tr th:each="pet : ${pets}">
-        <td th:text="${pet.pet_id}"></td>
+        <td th:text="${pet.id}"></td>
         <td th:text="${pet.name}"></td>
         <td th:text="${pet.type}"></td>
         <td th:text="${pet.age}"></td>
         <td>
 
-            <a th:href="@{/updateemployee/{id}(id=${pet.pet_id})}">Update</a>
-            <a th:href="@{/detailemployee/{id}(id=${pet.pet_id})}">Details</a>
-            <a th:href="@{/deleteemployee/{id}(id=${pet.pet_id})}">Delete</a>
+            <a th:href="@{/updateemployee/{id}(id=${pet.id})}">Update</a>
+            <a th:href="@{/detailemployee/{id}(id=${pet.id})}">Details</a>
+            <a th:href="@{/deleteemployee/{id}(id=${pet.id})}">Delete</a>
 
         </td>
     </tr>

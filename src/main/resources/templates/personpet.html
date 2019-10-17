@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Person Pet Relation</h1>
-<div th:each="person : ${person}">
+<div th:each=" : ${}">
     <h2 th:text="${person.name}"></h2>
     <h6 th:inline="text">specializing in [[${director.genre}]]</h6>
     <ul>

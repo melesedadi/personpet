@@ -24,6 +24,12 @@
     <span th:if="${#fields.hasErrors('type')}"
           th:errors="*{type}"></span><br/>
 
+    <Select  name="people" th:field="*{people}">
+        <option th:each="person :${persons}"  th:value="${person.id}" th:text="${person.name}">
+
+        </option>
+    </Select>
+
     <input type="submit" value="Submit" />
 </form>
 
